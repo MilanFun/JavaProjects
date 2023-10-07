@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+  <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+<!--  Scanner component-->
+  <context:component-scan base-package="framework.lesson.ioc"/>
+
+<!--  <bean id="testBean1"-->
+<!--        class="framework.lesson.TestBean">-->
+<!--    <constructor-arg value="Neil"/>-->
+<!--  </bean>-->
+
+<!--  <bean id="testBean2"-->
+<!--        class = "framework.lesson.TestBean">-->
+<!--    <constructor-arg value="Thomas"/>-->
+<!--  </bean>-->
+
+<!--&lt;!&ndash;  <bean id="musicBean"&ndash;&gt;-->
+<!--&lt;!&ndash;        class = "framework.lesson.ioc.ClassicalMusic">&ndash;&gt;-->
+<!--&lt;!&ndash;  </bean>&ndash;&gt;-->
+
+<!--  <bean id="musicBean1"-->
+<!--        class="framework.lesson.ioc.RockMusic">-->
+<!--  </bean>-->
+
+<!--  <bean id="jazzMusic"-->
+<!--        class="framework.lesson.ioc.JazzMusic">-->
+<!--  </bean>-->
+
+<!--&lt;!&ndash;  <bean id="musicPlayer"&ndash;&gt;-->
+<!--&lt;!&ndash;        class="framework.lesson.ioc.MusicPlayer">&ndash;&gt;-->
+<!--&lt;!&ndash;    <constructor-arg ref="musicBean"/>&ndash;&gt;-->
+<!--&lt;!&ndash;  </bean>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  DI via setter &ndash;&gt;-->
+<!--  <bean id="setterMusicPlayer"-->
+<!--        class="framework.lesson.ioc.MusicPlayer">-->
+<!--    <property name="music" ref="jazzMusic"/>-->
+<!--  </bean>-->
+
+<!--&lt;!&ndash;  <bean id="advancedMusicPlayer"&ndash;&gt;-->
+<!--&lt;!&ndash;        class="framework.lesson.ioc.MusicPlayer">&ndash;&gt;-->
+<!--&lt;!&ndash;    <property name="music" ref="musicBean"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <property name="name" value="My Playlist"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <property name="volume" value="60"/>&ndash;&gt;-->
+<!--&lt;!&ndash;  </bean>&ndash;&gt;-->
+
+<!--  <bean id="musicPlayerProperties"-->
+<!--        class="framework.lesson.ioc.MusicPlayer">-->
+<!--    <property name="music" ref="jazzMusic"/>-->
+<!--    <property name="name" value="${musicPlayerProperties.name}"/>-->
+<!--    <property name="volume" value="${musicPlayerProperties.volume}"/>-->
+<!--  </bean>-->
+
+<!--&lt;!&ndash;  <bean id="classical"&ndash;&gt;-->
+<!--&lt;!&ndash;        class="framework.lesson.ioc.ClassicalMusic">&ndash;&gt;-->
+<!--&lt;!&ndash;  </bean>&ndash;&gt;-->
+
+<!--  <bean id="jazz"-->
+<!--        class="framework.lesson.ioc.JazzMusic">-->
+<!--  </bean>-->
+
+<!--  <bean id="rap"-->
+<!--        class="framework.lesson.ioc.RapMusic">-->
+<!--  </bean>-->
+
+<!--&lt;!&ndash;  Method 1 of creation list&ndash;&gt;-->
+<!--  <bean id="list" class="java.util.ArrayList">-->
+<!--    <constructor-arg>-->
+<!--      <list>-->
+<!--        <ref bean="rap"/>-->
+<!--&lt;!&ndash;        <ref bean="classical"/>&ndash;&gt;-->
+<!--        <ref bean="jazz"/>-->
+<!--      </list>-->
+<!--    </constructor-arg>-->
+<!--  </bean>-->
+
+<!--  &lt;!&ndash;  Method 2 of creation list&ndash;&gt;-->
+<!--  <util:list id="myList" value-type="framework.lesson.ioc.Music">-->
+<!--&lt;!&ndash;    <bean id="classical"&ndash;&gt;-->
+<!--&lt;!&ndash;          class="framework.lesson.ioc.ClassicalMusic">&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+<!--    <bean id="jazz"-->
+<!--          class="framework.lesson.ioc.JazzMusic">-->
+<!--    </bean>-->
+
+<!--    <bean id="rap"-->
+<!--          class="framework.lesson.ioc.RapMusic">-->
+<!--    </bean>-->
+<!--  </util:list>-->
+
+<!--  <bean id="listMusic"-->
+<!--        class="framework.lesson.ioc.MusicPlayer">-->
+<!--    <property name="listOfMusic" ref="myList"/>-->
+<!--    <property name="volume" value="${listMusic.volume}"/>-->
+<!--    <property name="name" value="${listMusic.name}"/>-->
+<!--  </bean>-->
+
+<!--  <bean id="singletonBean"-->
+<!--        class="framework.lesson.ioc.MusicPlayer">-->
+<!--    <property name="music" ref="rap"/>-->
+<!--    <property name="name" value="Singleton"/>-->
+<!--    <property name="volume" value="100"/>-->
+<!--  </bean>-->
+
+<!--  <bean id="prototypeBean"-->
+<!--        class="framework.lesson.ioc.MusicPlayer" scope="prototype">-->
+<!--    <property name="music" ref="rap"/>-->
+<!--    <property name="name" value="Prototype"/>-->
+<!--    <property name="volume" value="100"/>-->
+<!--  </bean>-->
+
+<!--  <bean id="classicalMusicWithInitAndDestroyMethod"-->
+<!--        class="framework.lesson.ioc.ClassicalMusic"-->
+<!--        init-method="init"-->
+<!--        factory-method="getInstance"-->
+<!--        destroy-method="destroy">-->
+<!--  </bean>-->
+
+<!--  <bean id="classicalMusic"-->
+<!--        class="framework.lesson.ioc.MusicPlayer">-->
+<!--    <constructor-arg ref="classicalMusicWithInitAndDestroyMethod"/>-->
+<!--    <property name="volume" value="25"/>-->
+<!--    <property name="name" value="Lifecycle"/>-->
+<!--  </bean>-->
+</beans>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Country</title>
+</head>
+<body>
+<h2>Country info</h2>
+<form th:action="@{/}">
+  <label>
+    <input type="text" th:city="name"/>
+    <input type="submit" value="Поменять">
+  </label>
+</form>
+<p th:text="${capital}"></p>
+</body>
+</html>

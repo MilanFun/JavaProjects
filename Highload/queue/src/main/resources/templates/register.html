@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Person</title>
+</head>
+<body>
+<h2>Request for token success</h2>
+<form th:method="POST" th:action="@{/register}" th:object="${user}">
+    <label for="email">Enter email: </label>
+    <input type="text" th:field="*{email}" id="email">
+    <br/>
+    <input type="submit" value="Request">
+</form>
+</body>
+</html>
